@@ -8,6 +8,7 @@
                   <li><a href="{{ route("movies.show", $movie -> id)}}">{{ $movie->title }}</a></li>
                   <li>{{ $movie->year }}</li>
                   <li><a href="{{ route("movies.edit", $movie -> id)}}">EDIT</a></li>
+                  <li><a href="{{ route("movies.destroy", $movie -> id)}}">DELETE/DESTROY</a></li>
                 </ul>
             </li>
             <br>

@@ -83,7 +83,16 @@ class MovieControllerAdv extends Controller
      */
     public function update(Request $request, $id)
     {
-        return "update";
+      $validateData =  $request -> validate([
+        "title" => "required",
+        "year" => "required|numeric",
+        "overview" => "required"
+      ]);
+
+      $movie = Movie::findOrFail($id);
+      $movie -> update($validateData);
+
+      return redirect("movies");
     }
 
     /**
@@ -94,6 +103,9 @@ class MovieControllerAdv extends Controller
      */
     public function destroy($id)
     {
-      return "destroy";
+      $movie=Movie::findOrFail($id);
+      $movie -> delete();
+      // attento a nn confondere delete e destroy
+      return redirect("movies");
     }
 }

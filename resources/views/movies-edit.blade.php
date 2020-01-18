@@ -5,7 +5,7 @@
 
 @section('content')
 
-<form action="{{route('movies.update')}}" method="post">
+<form action="{{route('movies.update', $movie -> id)}}" method="post">
   @csrf
   @method('PUT')
 
@@ -15,13 +15,13 @@
   </div>
   <div class="form-group">
     <label for="year">year:</label>
-    <input type="text" name="year" value="">
+    <input type="text" name="year" value="{{$movie -> year}">
   </div>
   <div class="form-group">
     <label for="overview">overview:</label>
-    <input type="text" name="overview" value="">
+    <input type="text" name="overview" value="{{$movie -> overview}">
   </div>
-  <button type="submit">SALVA</button>
+  <button type="submit">UPDATE ME</button>
 </form>
 <p>al click su salva andra sulla rotta movies.store ovvero si attiverà la funzione store presente nel controller</p>
 
