@@ -70,7 +70,8 @@ class MovieControllerAdv extends Controller
      */
     public function edit($id)
     {
-      return "edit";
+      $movie = Movie::findOrFail($id)
+      return view("movies-edit", compact("movie"));
     }
 
     /**
