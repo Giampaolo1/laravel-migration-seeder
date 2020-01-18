@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Movie;
 
 class MovieControllerAdv extends Controller
 {
@@ -35,7 +36,7 @@ class MovieControllerAdv extends Controller
      */
     public function store(Request $request)
     {
-      // VALIDATION--------------------------
+      // VALIDATION--------Controllo dei dati che verranno inseriti------------------
       $validateData =  $request -> validate([
         "title" => "required",
         "year" => "required|numeric",
@@ -43,8 +44,9 @@ class MovieControllerAdv extends Controller
       ]);
 
       // dd($validateData);
+      // INSERT---------qui avviene l azione---------------
       $movie = Movie::create($validateData);
-      // REDIRECT---------------------
+      // REDIRECT------quello che vede l utente dopo l inserimento---------------
       return redirect("movies");
     }
 
