@@ -37,3 +37,5 @@ class CreateComicsTable extends Migration
         Schema::dropIfExists('comics');
     }
 }
+
+// php artisan migrate:refresh

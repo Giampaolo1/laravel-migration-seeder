@@ -1,5 +1,6 @@
 <?php // pagina che estende il layouts ?>
 
+<?php // EXTENDS-------------------- ?>
 @extends('layouts.comic-layout')
 
 @section ('content')
@@ -19,3 +20,5 @@
   </ol>
 
 @endsection
+
+<?php // sara' quello che ritorniamo ?>

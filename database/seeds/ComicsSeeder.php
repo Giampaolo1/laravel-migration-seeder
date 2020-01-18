@@ -21,9 +21,12 @@ class ComicsSeeder extends Seeder
               'vote' => $faker->numberBetween($min = 0, $max = 5)
           ];
 
+          // eloquent
           $comic = new Comic;
           $comic->fill($newComicData);
           $comic->save();
       }
     }
 }
+
+// php artisan db:seed --class ComicsSeeder

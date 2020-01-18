@@ -11,4 +11,11 @@
 |
 */
 
-Route::get('/comics', 'ComicsController@index');
+// Route::get('/comics', 'ComicsController@index');
+Route::resource('/movies', 'MovieControllerAdv');
+
+// route('movies.show', $movie -> id)
+// <form action="{{ route('movies.store') }}" method="post">
+//       @csrf
+//       @method('POST')
+// </form>
